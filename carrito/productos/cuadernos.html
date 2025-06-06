@@ -44,7 +44,7 @@
     <div class="col-md-3 dato-cols"> <!-- Entrada de Cantidad-->
         <input type="hidden" name="productos[0][nombre]" value="Libreta 1 materia">
         <input type="hidden" name="productos[0][precio]" value="2.60">
-        <input id="prodA" class="form-control spinner" type="number" name="productos[0][cantidad]" data-precio="2.60">
+        <input id="prodA" class="form-control spinner" type="number" name="productos[0][cantidad]" value="<?= htmlspecialchars($cantidad0) ?>" data-precio="2.60">
     </div>
     <div class="col-md-3 dato-cols"> <!-- Visualización del Subtotal -->
         <span id="totalA" class="subtotal">0.00</span>
@@ -65,7 +65,7 @@
     <div class="col-md-3 dato-cols"> <!-- Entrada de Cantidad-->
         <input type="hidden" name="productos[1][nombre]" value="Libreta 5 materias">
         <input type="hidden" name="productos[1][precio]" value="5.60">
-        <input id="prodB" class="form-control spinner" type="number" name="productos[1][cantidad]" data-precio="5.60">
+        <input id="prodB" class="form-control spinner" type="number" name="productos[1][cantidad]" value="<?= htmlspecialchars($cantidad1) ?>" data-precio="5.60">
     </div>
     <div class="col-md-3 dato-cols"> <!-- Visualización del Subtotal -->
         <span id="totalB" class="subtotal">0.00</span>

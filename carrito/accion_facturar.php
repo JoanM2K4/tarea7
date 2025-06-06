@@ -14,7 +14,7 @@
  * dentro de un elemento `<div>` estilizado con la clase `summary-row danger`.
  * 
  */ -->
- 
+  
 <?php
 require_once 'ClasePedidoEscolar.php';
 

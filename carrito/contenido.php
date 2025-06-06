@@ -20,7 +20,7 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/3.1.1/jquery.bootstrap-touchspin.min.js"></script>
 
     <!-- CSS de este doc  -->
-    <link rel="stylesheet" href="./CSS/contenido.css">
+       <link rel="stylesheet" href="../CSS/contenido.css">
 
 </head>
 
@@ -40,13 +40,13 @@
      */ -->
     <div class="container contenido">
 
-        <form action="" method="post">
+        <form action="" method="post" id="formPedido">
             <div class="row">
                 <div class="col-md-8">
-                    <?php include("./componentes/productos.php"); ?> 
+                    <?php include(__DIR__ . "/contenido__productos.php"); ?>
                 </div>
                 <div class="col-md-4">
-                    <?php include("./componentes/factura.php"); ?>
+                    <?php include(__DIR__ . "/contenido__factura.php"); ?>
                 </div>
             </div>
         </form>

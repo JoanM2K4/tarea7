@@ -9,7 +9,6 @@
  */
 
 $('.spinner').TouchSpin({
-  initval: 0, // valor inicial
   min: 0,  // valor mínimo permitido
   max: 100, // valor máximo permitido (opcional)
   step: 1 // incremento/decremento por cada clic (opcional)
@@ -53,8 +52,9 @@ function actualizarSubtotal(input) {
 
 $('.spinner').on('change input', function () {
   actualizarSubtotal(this);
+  guardarPedidoEnCookie(); // Guarda el pedido en una cookie cada vez que se actualiza un spinner
+  // No actualizamos el div ni mostramos mensaje, solo guardamos en cookie
 });
-
 
 
 /**
@@ -65,3 +65,28 @@ $('.spinner').on('change input', function () {
 $('.spinner').each(function () {
   actualizarSubtotal(this);
 });
+
+
+/**
+ * Guarda el pedido en una cookie utilizando AJAX.
+ */
+function guardarPedidoEnCookie() {
+  const formulario = document.getElementById('formPedido');
+
+  if (!formulario.checkValidity()) {
+    formulario.reportValidity();
+    return;
+  }
+
+  const formData = new FormData(formulario);
+
+  fetch('/tarea7/carrito/accion_cookie_pedido.php', {
+    method: 'POST',
+    body: formData,
+    credentials: 'same-origin'
+  })
+  .then(() => {
+    // No hacemos nada, no actualizamos div ni mostramos mensaje
+  })
+  .catch(err => console.error('Error guardando cookie:', err));
+}

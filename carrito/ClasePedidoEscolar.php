@@ -76,42 +76,42 @@ class Pedido
      * @return void
      */
     public function mostrarResumen()
-    {
-        $cantidad_total = $this->cantidadTotal(); // Obtiene la cantidad total de productos en el pedido
-        $subtotal = $this->total(); // Calcula el subtotal total del pedido
-        $total = $subtotal; // Inicializa el total como el subtotal (sin ITBMS)
+{
+    $cantidad_total = $this->cantidadTotal(); // Cantidad total de productos en el pedido
+    $subtotal = $this->total(); // Subtotal sin ITBMS
+    $itbms = $subtotal * 0.07; // 7% de ITBMS
+    $total = $subtotal + $itbms; // Total con ITBMS
 
-        // FACTURA RESUMEN
-        echo '<div class="summary-box">'; 
-        // DETALLE DE PRODUCTOS
-        echo '<div class="product-detail-box mt-4">'; // Crea un contenedor para los detalles de los productos
-        echo '<h5>Detalle de productos</h5>'; // Título de la sección de detalles de productos
-        echo '<table class="table table-bordered">'; // Crea una tabla para mostrar los detalles de los productos
-        echo '<thead><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Subtotal</th></tr></thead>'; // Encabezados de la tabla
-        echo '<tbody>';
-        foreach ($this->productos as $prod) { // Recorre cada producto en la lista de productos
-            echo '<tr>'; // Crea una nueva fila en la tabla para cada producto
-            echo '<td>' . htmlspecialchars($prod['nombre']) . '</td>';  // Muestra el nombre del producto, escapando caracteres especiales para evitar problemas de seguridad
-            echo '<td>' . $prod['cantidad'] . '</td>'; // Muestra la cantidad del producto
-            echo '<td>$' . number_format($prod['precio'], 2) . '</td>'; // Muestra el precio del producto formateado a 2 decimales
-            echo '<td>$' . number_format($prod['subtotal'], 2) . '</td>'; // Muestra el subtotal del producto formateado a 2 decimales
-            echo '</tr>';
-        }
-        echo '</tbody></table>';  // Cierra el cuerpo de la tabla y la tabla misma
-        echo '</div>';
+    // FACTURA RESUMEN
+    echo '<div class="summary-box">'; 
 
-        // RESUMEN DE PEDIDO
-        echo '<hr>'; // Línea separadora
-
-        echo '<div class="summary-row"><span>Articulos: </span><span>' . $cantidad_total . '</span></div>'; // Muestra la cantidad total de artículos en el pedido
-        echo '<div class="summary-row"><span>Sub Total(Sin ITBMS): </span><span>$' . number_format($subtotal, 2) . '</span></div>'; // Muestra el subtotal total del pedido formateado a 2 decimales
-
-        echo '<hr>'; // Línea separadora
-        echo '<div class="summary-row bold"><span>Total: </span><span>$' . number_format($total, 2) . '</span></div>'; // Muestra el total del pedido formateado a 2 decimales
-
-        echo '</div>';
-
+    // DETALLE DE PRODUCTOS
+    echo '<div class="product-detail-box mt-4">';
+    echo '<h5>Detalle de productos</h5>';
+    echo '<table class="table table-bordered">';
+    echo '<thead><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Subtotal</th></tr></thead>';
+    echo '<tbody>';
+    foreach ($this->productos as $prod) {
+        echo '<tr>';
+        echo '<td>' . htmlspecialchars($prod['nombre']) . '</td>';
+        echo '<td>' . $prod['cantidad'] . '</td>';
+        echo '<td>$' . number_format($prod['precio'], 2) . '</td>';
+        echo '<td>$' . number_format($prod['subtotal'], 2) . '</td>';
+        echo '</tr>';
     }
+    echo '</tbody></table>';
+    echo '</div>';
+
+    // RESUMEN DE PEDIDO
+    echo '<hr>';
+    echo '<div class="summary-row"><span>Artículos: </span><span>' . $cantidad_total . '</span></div>';
+    echo '<div class="summary-row"><span>Sub Total (Sin ITBMS): </span><span>$' . number_format($subtotal, 2) . '</span></div>';
+    echo '<div class="summary-row"><span>ITBMS (7%): </span><span>$' . number_format($itbms, 2) . '</span></div>';
+    echo '<hr>';
+    echo '<div class="summary-row bold"><span>Total: </span><span>$' . number_format($total, 2) . '</span></div>';
+    
+    echo '</div>';
+}
 
 }
 ?>

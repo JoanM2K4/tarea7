@@ -42,7 +42,7 @@
     <div class="col-md-3 dato-cols">
         <input type="hidden" name="productos[2][nombre]" value="Paquete Bolígrafo Azul">
         <input type="hidden" name="productos[2][precio]" value="2.25">
-        <input id="prodC" class="form-control spinner" type="number" name="productos[2][cantidad]" data-precio="2.25">
+        <input id="prodC" class="form-control spinner" type="number" name="productos[2][cantidad]" value="<?= htmlspecialchars($cantidad2) ?>" data-precio="2.25">
     </div>
     <div class="col-md-3 dato-cols">
         <span id="totalC" class="subtotal">0.00</span>
@@ -62,7 +62,7 @@
     <div class="col-md-3 dato-cols">
         <input type="hidden" name="productos[3][nombre]" value="Bolígrafo Neon">
         <input type="hidden" name="productos[3][precio]" value="5.00">
-        <input id="prodD" class="form-control spinner" type="number" name="productos[3][cantidad]" data-precio="5.00">
+        <input id="prodD" class="form-control spinner" type="number" name="productos[3][cantidad]" value="<?= htmlspecialchars($cantidad3) ?>" data-precio="5.00">
     </div>
     <div class="col-md-3 dato-cols">
         <span id="totalD" class="subtotal">0.00</span>

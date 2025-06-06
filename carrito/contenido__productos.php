@@ -1,16 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<body>
 
     <!--                                                ENCABEZADO                               
     *Inclusion del encabezado-->
-    <?php include("./componentes/productos/encabezado.html"); ?>
+    <?php include(__DIR__ . "/./productos/encabezado.html"); ?>
 
+    
+    <?php
+    $pedidoGuardado = [];
+    // Verificar si las cookies están habilitadas y si el usuario ha aceptado las cookies 
+    // Verificar si la cookie 'pedido' existe y decodificarla,
+    if (isset($_COOKIE['cookies_accepted']) && $_COOKIE['cookies_accepted'] === 'true') {
+        if (isset($_COOKIE['pedido'])) {
+            $pedidoGuardado = json_decode($_COOKIE['pedido'], true);
+        }
+    }
+    //se obtiene el contenido del pedido guardado en la cookie, sino se inicializa con 0
+    $cantidad0 = isset($pedidoGuardado[0]['cantidad']) ? $pedidoGuardado[0]['cantidad'] : 0;
+    $cantidad1 = isset($pedidoGuardado[1]['cantidad']) ? $pedidoGuardado[1]['cantidad'] : 0;
+    $cantidad2 = isset($pedidoGuardado[2]['cantidad']) ? $pedidoGuardado[2]['cantidad'] : 0;
+    $cantidad3 = isset($pedidoGuardado[3]['cantidad']) ? $pedidoGuardado[3]['cantidad'] : 0;
+    $cantidad4 = isset($pedidoGuardado[4]['cantidad']) ? $pedidoGuardado[4]['cantidad'] : 0;
+    $cantidad5 = isset($pedidoGuardado[5]['cantidad']) ? $pedidoGuardado[5]['cantidad'] : 0;
+    $cantidad6 = isset($pedidoGuardado[6]['cantidad']) ? $pedidoGuardado[6]['cantidad'] : 0;
+    $cantidad7 = isset($pedidoGuardado[7]['cantidad']) ? $pedidoGuardado[7]['cantidad'] : 0;
+
+    ?>
 
 
     <!--                                                CATEGORIAS   -->
@@ -59,7 +72,7 @@
     <!-- Contenido Colapsable -->
     <div class="collapse" id="CuadernosCollapse">
         <div class="card card-body">
-            <?php include("./componentes/productos/cuadernos.html"); ?>
+            <?php include(__DIR__ . "/./productos/cuadernos.html"); ?>
         </div>
     </div>
 
@@ -77,7 +90,7 @@
     <!-- Contenido Colapsable -->
     <div class="collapse" id="BoligrafosCollapse">
         <div class="card card-body">
-            <?php include("./componentes/productos/boligrafos.html"); ?>
+            <?php include(__DIR__ . "/./productos/boligrafos.html"); ?>
         </div>
     </div>
 
@@ -95,14 +108,10 @@
     <!-- Contenido Colapsable -->
     <div class="collapse" id="AccesoriosCollapse">
         <div class="card card-body">
-            <?php include("./componentes/productos/accesorios.html"); ?>
+            <?php include(__DIR__ . "/./productos/accesorios.html"); ?>
         </div>
     </div>
 
-
-</body>
-
 <!-- Script que permite que al tocar los spinners se muestre en automatico el subtotal de los productos -->
-<script src="./JS/touch_spinner.js"></script> 
+<script src="./touch_spinner.js"></script>
 
-</html>
