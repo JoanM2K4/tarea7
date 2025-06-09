@@ -115,3 +115,67 @@
 <!-- Script que permite que al tocar los spinners se muestre en automatico el subtotal de los productos -->
 <script src="./touch_spinner.js"></script>
 
+<script>
+  // Mismo script de búsqueda pero para ser reutilizable
+  (() => {
+    const inputBusqueda = document.getElementById('inputBusqueda');
+    const btnBuscar = document.getElementById('btnBuscar');
+    const categoriaDropdownMenu = document.getElementById('categoriaDropdownMenu');
+    const categoriaDropdownBtn = document.getElementById('categoriaDropdownBtn');
+
+    let categoriaSeleccionada = 'all';
+
+    function filtrarProductos() {
+      const filtro = inputBusqueda.value.toLowerCase().trim();
+
+      const categorias = ['Cuadernos', 'Boligrafos', 'Accesorios'];
+
+      categorias.forEach(categoria => {
+        if (categoriaSeleccionada !== 'all' && categoria !== categoriaSeleccionada) {
+          document.querySelectorAll(`[data-categoria="${categoria}"]`).forEach(el => el.style.display = 'none');
+          return;
+        } else {
+          document.querySelectorAll(`[data-categoria="${categoria}"]`).forEach(el => el.style.display = '');
+        }
+
+        const contenedor = document.querySelector(`#${categoria}Collapse .card-body`);
+        if (!contenedor) return;
+
+        const productos = contenedor.querySelectorAll('*');
+
+        let algunProductoVisible = false;
+        productos.forEach(prod => {
+          if (prod.textContent.toLowerCase().includes(filtro)) {
+            prod.style.display = '';
+            algunProductoVisible = true;
+          } else {
+            prod.style.display = 'none';
+          }
+        });
+
+        const toggleRow = document.querySelector(`.toggle-row[data-categoria="${categoria}"]`);
+        const collapseDiv = document.querySelector(`#${categoria}Collapse`);
+
+        if (algunProductoVisible || filtro === '') {
+          if (toggleRow) toggleRow.style.display = '';
+          if (collapseDiv) collapseDiv.style.display = '';
+        } else {
+          if (toggleRow) toggleRow.style.display = 'none';
+          if (collapseDiv) collapseDiv.style.display = 'none';
+        }
+      });
+    }
+
+    btnBuscar.addEventListener('click', filtrarProductos);
+    inputBusqueda.addEventListener('input', filtrarProductos);
+
+    categoriaDropdownMenu.querySelectorAll('a.dropdown-item').forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        categoriaSeleccionada = item.dataset.categoria;
+        categoriaDropdownBtn.textContent = item.textContent;
+        filtrarProductos();
+      });
+    });
+  })();
+</script>
