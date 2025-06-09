@@ -14,9 +14,12 @@
   </div>
 
   <button type="button" class="btn btn-success checkout-btn" onclick="Facturar()">Realizar Pedido</button>
+  <button type="button" class="btn btn-danger checkout-btn" onclick="EliminarCookies()">Eliminar Pedido</button>
+
 </div>
 
  <script>
+
     // Se ejecuta cuando se presiona el botón "Guardar", envía toda la data del formulario
     function Facturar() {
       // Selecciona el formulario por su ID
@@ -44,4 +47,21 @@
         });
 
     }
-  </script>
+
+
+    /**
+     * Elimina el pedido actual enviando una solicitud POST al archivo 'accion_borrar_pedido.php'.
+     * Utiliza la API Fetch para realizar la petición.
+     * Si ocurre un error durante el proceso, se muestra un mensaje de error en la consola.
+     */
+    function EliminarCookies() {
+    fetch('./accion_borrar_cookies.php', {
+      method: 'POST',
+    })
+    .catch(error => {
+      console.error('Error al borrar cookie:', error);
+    });
+  }
+</script>
+
+  
