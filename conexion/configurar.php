@@ -2,7 +2,7 @@
 // Incluye el archivo de conexión en la cabecera 
 $servername = "localhost"; 
 $username = "root"; 
-$password = "Kasino"; 
+$password = "UTP.Guerrero2024"; 
 $database = "sakila"; 
  
 try { 
@@ -15,12 +15,12 @@ try {
     } 
  
     // Si la conexión es exitosa, muestra un mensaje 
-    echo "¡Conexión exitosa a la base de datos!"; 
+    //echo "¡Conexión exitosa a la base de datos!"; 
  
     // Realiza aquí las operaciones con la base de datos 
  
     // Cierra la conexión 
-    $conn->close(); 
+    //$conn->close(); 
 } catch (Exception $e) { 
     // Captura cualquier excepción y muestra un mensaje de error 
     echo "Error: " . $e->getMessage(); 

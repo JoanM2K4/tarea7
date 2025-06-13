@@ -8,8 +8,6 @@
 <body> 
     <h2>Insertar Nuevo Actor</h2> 
     <form method="post" action="insertar_actor2.php">
-        <label for="actor_id">Actor ID:</label> 
-        <input type="number" id="actor_id" name="actor_id" required><br><br> 
         <label for="first_name">Nombre:</label> 
         <input type="text" id="first_name" name="first_name" required><br><br> 
         <label for="last_name">Apellido:</label> 
