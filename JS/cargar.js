@@ -1,7 +1,7 @@
 
   function cargarFormulario(url) {
     const contenedor = document.getElementById('contenedor-formulario');
-    contenedor.innerHTML = '<div class="text-center text-secondary">Cargando...</div>';
+    contenedor.innerHTML = '<div class="text-center">Cargando...</div>';
 
     fetch(url)
       .then(response => {
