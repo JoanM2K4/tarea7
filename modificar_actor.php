@@ -1,6 +1,6 @@
 <?php 
 // Incluye el archivo de conexión en la cabecera 
-include('../conexion/configurar.php'); 
+include('./conexion/configurar.php');  
  
 // Verifica si se han enviado los datos del formulario 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 

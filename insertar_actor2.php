@@ -1,5 +1,5 @@
 <?php 
-include 'conectar.php'; 
+include('./conexion/configurar.php'); 
  
 // Obtener datos del formulario 
 $nombre = $_POST['nombre']; 

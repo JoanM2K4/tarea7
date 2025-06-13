@@ -1,6 +1,6 @@
 <?php 
 // Incluye el archivo de conexión en la cabecera 
-include('../conexion/configurar.php'); 
+include('./conexion/configurar.php'); 
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     // Recupera los datos del formulario 

@@ -2,7 +2,7 @@
 // Incluye el archivo de conexión en la cabecera 
 $servername = "localhost"; 
 $username = "root"; 
-$password = "utpCocle2019$"; 
+$password = "Kasino"; 
 $database = "sakila"; 
  
 try { 

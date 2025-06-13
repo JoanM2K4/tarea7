@@ -1,6 +1,6 @@
 <?php 
 // Incluye el archivo de conexión en la cabecera 
-include('../conexion/configurar.php'); 
+include('./conexion/configurar.php'); 
  
  
 // Define las variables para almacenar los datos del actor 
