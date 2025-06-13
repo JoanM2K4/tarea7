@@ -20,7 +20,7 @@
             <button type="button" class="btn btn-outline-light" onclick="cargarFormulario('formulario.php')">Añadir
                 Actor</button>
             <button type="button" class="btn btn-outline-light"
-                onclick="cargarFormulario('modificar_actor.php')">Modificar Actor</button>
+                onclick="cargarFormulario('formulario_modificar_actor.php')">Modificar Actor</button>
             <button type="button" class="btn btn-outline-light" onclick="cargarFormulario('listar_actor.php')">Listar
                 Actores</button>
         </div>

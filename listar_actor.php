@@ -12,11 +12,12 @@ $result = $conn->query($sql_select);
 <head> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Lista de Actores</title> 
+    <title style="color: black;">Lista de Actores</title> 
     <style> 
         table { 
             width: 100%; 
             border-collapse: collapse; 
+            color: black;
         } 
         table, th, td { 
             border: 1px solid black; 
@@ -33,6 +34,7 @@ $result = $conn->query($sql_select);
         <tr> 
             <th>ID</th> 
             <th>Nombre</th> 
+            <th>Fecha de modificación</th> 
         </tr> 
         <?php 
         // Muestra los datos de la tabla actor en una tabla HTML 
@@ -40,6 +42,7 @@ $result = $conn->query($sql_select);
             echo "<tr>"; 
             echo "<td>" . $row["actor_id"] . "</td>"; 
             echo "<td>" . $row["first_name"] . " " . $row["last_name"] . "</td>"; 
+            echo "<td>" . $row["last_update"] . "</td>"; 
             echo "</tr>"; 
         } 
         ?> 
