@@ -37,7 +37,8 @@
 <body>
     <!--------------------------Contenido----------------------------------------->
     <div class="container mt-4" style="flex-grow: 1;">
-        <h3 class="mb-4">Gestión de Actores</h3>
+        <h3 class="mb-4">Gestión de Actores <span class="badge text-white" style="background-color: #1299B7;">SAKILA</span>
+</h3>
 
         <!-- Botones o Tabs -->
         <div class="btn-group mb-3" role="group" aria-label="Opciones de formulario">
@@ -58,7 +59,7 @@
 
     <!--------------------------Footer----------------------------------------->
     <footer class="text-white text-center py-3 mt-4">
-        &copy; 2025 Gestión de Actores. Joan Soto, Angelo Guerrero., Onel Magallon, Erick Tenorio,
+        &copy; 2025 Gestión de Actores. Joan Soto, Angelo Guerrero, Onel Magallon, Erick Tenorio,
     </footer>
 
     <script src="./JS/cargar.js"></script>
