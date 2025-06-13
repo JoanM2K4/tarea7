@@ -20,7 +20,7 @@ try {
     // Realiza aquí las operaciones con la base de datos 
  
     // Cierra la conexión 
-    // $conn->close(); 
+    $conn->close(); 
 } catch (Exception $e) { 
     // Captura cualquier excepción y muestra un mensaje de error 
     echo "Error: " . $e->getMessage(); 
