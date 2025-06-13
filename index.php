@@ -9,54 +9,56 @@
 
     <style>
         body {
-            background-color: #2c2c2c;
-            /* Estilo Material You fondo oscuro */
-            color: #e0e0e0;
+            background-color: #464890;
+            background-image: url('./images/fondo_principal.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
             /* Texto claro que contrasta bien */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             height: 100vh;
         }
+
+        .contenedor-formulario {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        footer {
+            background-color: #464890;
+        }
     </style>
 </head>
 
 <body>
-    <!--------------------------Header----------------------------------------->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Gestión de Actores</a>
-        </div>
-    </nav>
-
-
-
-
     <!--------------------------Contenido----------------------------------------->
     <div class="container mt-4" style="flex-grow: 1;">
         <h3 class="mb-4">Gestión de Actores</h3>
 
         <!-- Botones o Tabs -->
         <div class="btn-group mb-3" role="group" aria-label="Opciones de formulario">
-            <button type="button" class="btn btn-outline-primary" onclick="cargarFormulario('formulario.php')">Añadir
+            <button type="button" class="btn btn-outline-light" onclick="cargarFormulario('formulario.php')">Añadir
                 Actor</button>
-            <button type="button" class="btn btn-outline-primary"
+            <button type="button" class="btn btn-outline-light"
                 onclick="cargarFormulario('modificar_actor.php')">Modificar Actor</button>
-            <button type="button" class="btn btn-outline-primary" onclick="cargarFormulario('listar_actor.php')">Listar
+            <button type="button" class="btn btn-outline-light" onclick="cargarFormulario('listar_actor.php')">Listar
                 Actores</button>
         </div>
 
         <!-- Contenedor donde se cargan los formularios -->
-        <div id="contenedor-formulario" class="border rounded p-4 shadow-sm"
-            style="min-height: 300px; background-color: #f8f9fa;">
-            <p class="text-muted">Selecciona una opción para mostrar el formulario correspondiente.</p>
+        <div id="contenedor-formulario" class="p-4" style="min-height: 300px;">
+            <span class="badge bg-light text-dark">Selecciona un formulario</span>
         </div>
     </div>
 
 
     <!--------------------------Footer----------------------------------------->
-    <footer class="bg-primary text-white text-center py-3 mt-4">
-        &copy; 2025 Gestión de Actores. Joan Soto, Angelo Guerrero., Onel Magallon, Erick Tenorio, 
+    <footer class="text-white text-center py-3 mt-4">
+        &copy; 2025 Gestión de Actores. Joan Soto, Angelo Guerrero., Onel Magallon, Erick Tenorio,
     </footer>
 
     <script src="./JS/cargar.js"></script>
