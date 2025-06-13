@@ -56,7 +56,7 @@
 
     <!--------------------------Footer----------------------------------------->
     <footer class="bg-primary text-white text-center py-3 mt-4">
-        &copy; 2025 Gestión de Actores. Todos los derechos reservados.
+        &copy; 2025 Gestión de Actores. Joan Soto, Angelo Guerrero., Onel Magallon, Erick Tenorio, 
     </footer>
 
     <script src="./JS/cargar.js"></script>
