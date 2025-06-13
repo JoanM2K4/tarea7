@@ -1,5 +1,24 @@
 body {
-  background: linear-gradient(to right, #e9f1f7, #d0e3ff); /* Fondo suave con tonos que combinan */
+  background-color: #464890;
+  background-image: url('./images/fondo_principal.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  /* Texto claro que contrasta bien */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.contenedor-formulario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer {
+  background-color: #464890;
 }
