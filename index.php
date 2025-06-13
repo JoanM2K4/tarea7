@@ -6,11 +6,34 @@
     <title>Lab de BD VS Tejegod</title>
     <!-- Incluye Bootstrap CSS (usa CDN para mayor facilidad) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #2c2c2c;
+            /* Estilo Material You fondo oscuro */
+            color: #e0e0e0;
+            /* Texto claro que contrasta bien */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+    </style>
 </head>
 
 <body>
+    <!--------------------------Header----------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Gestión de Actores</a>
+        </div>
+    </nav>
 
-    <div class="container mt-4">
+
+
+
+    <!--------------------------Contenido----------------------------------------->
+    <div class="container mt-4" style="flex-grow: 1;">
         <h3 class="mb-4">Gestión de Actores</h3>
 
         <!-- Botones o Tabs -->
@@ -29,6 +52,13 @@
             <p class="text-muted">Selecciona una opción para mostrar el formulario correspondiente.</p>
         </div>
     </div>
+
+
+    <!--------------------------Footer----------------------------------------->
+    <footer class="bg-primary text-white text-center py-3 mt-4">
+        &copy; 2025 Gestión de Actores. Todos los derechos reservados.
+    </footer>
+
     <script src="./JS/cargar.js"></script>
 </body>
 
