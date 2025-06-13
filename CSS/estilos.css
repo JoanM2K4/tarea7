@@ -1,6 +1,6 @@
 body {
   background-color: #464890;
-  background-image: url('./images/fondo_principal.svg');
+  background-image: url('../images/fondo_principal.svg');
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -21,4 +21,5 @@ body {
 
 footer {
   background-color: #464890;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
 }

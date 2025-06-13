@@ -6,7 +6,7 @@
     <title>Lab de BD VS Tejegod</title>
     <!-- Incluye Bootstrap CSS (usa CDN para mayor facilidad) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-   
+    <link rel="stylesheet" href="./CSS/estilos.css">
 </head>
 
 <body>
@@ -35,9 +35,8 @@
 
 
     <!--------------------------Footer----------------------------------------->
-    <footer class="text-white text-center py-3 mt-4">
-        &copy; 2025 Gestión de Actores. Joan Soto, Angelo Guerrero, Onel Magallon, Erick Tenorio,
-    </footer>
+   <?php include './footer.php' ?>
+    <!--------------------------Scripts----------------------------------------->
 
     <script src="./JS/cargar.js"></script>
 </body>
